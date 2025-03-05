@@ -1,7 +1,13 @@
 ﻿using System.Linq;
-static double calculateAverage(int[] array)
+static double calculateIntAverage(int[] array)
 {
     return array.Average();
 }
 
-Console.WriteLine(calculateAverage([3, 2, 3]));
+static double calculateDoubleAverage(double[] array)
+{
+    return array.Average();
+}
+
+Console.WriteLine(calculateIntAverage([3, 2, 3]));
+Console.WriteLine(calculateDoubleAverage([3.5, 2.2, 3.1]));

@@ -1,0 +1,15 @@
+C:\Users\s30635\Desktop\apobd\APBD\APBD3\APBD3\obj\Debug\net8.0\APBD3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\s30635\Desktop\apobd\APBD\APBD3\APBD3\obj\Debug\net8.0\APBD3.AssemblyInfoInputs.cache
+C:\Users\s30635\Desktop\apobd\APBD\APBD3\APBD3\obj\Debug\net8.0\APBD3.AssemblyInfo.cs
+C:\Users\s30635\Desktop\apobd\APBD\APBD3\APBD3\obj\Debug\net8.0\APBD3.csproj.CoreCompileInputs.cache
+C:\Users\s30635\Desktop\apobd\APBD\APBD3\APBD3\obj\Debug\net8.0\APBD3.sourcelink.json
+C:\Users\s30635\Desktop\apobd\APBD\APBD3\APBD3\bin\Debug\net8.0\APBD3.exe
+C:\Users\s30635\Desktop\apobd\APBD\APBD3\APBD3\bin\Debug\net8.0\APBD3.deps.json
+C:\Users\s30635\Desktop\apobd\APBD\APBD3\APBD3\bin\Debug\net8.0\APBD3.runtimeconfig.json
+C:\Users\s30635\Desktop\apobd\APBD\APBD3\APBD3\bin\Debug\net8.0\APBD3.dll
+C:\Users\s30635\Desktop\apobd\APBD\APBD3\APBD3\bin\Debug\net8.0\APBD3.pdb
+C:\Users\s30635\Desktop\apobd\APBD\APBD3\APBD3\obj\Debug\net8.0\APBD3.dll
+C:\Users\s30635\Desktop\apobd\APBD\APBD3\APBD3\obj\Debug\net8.0\refint\APBD3.dll
+C:\Users\s30635\Desktop\apobd\APBD\APBD3\APBD3\obj\Debug\net8.0\APBD3.pdb
+C:\Users\s30635\Desktop\apobd\APBD\APBD3\APBD3\obj\Debug\net8.0\APBD3.genruntimeconfig.cache
+C:\Users\s30635\Desktop\apobd\APBD\APBD3\APBD3\obj\Debug\net8.0\ref\APBD3.dll

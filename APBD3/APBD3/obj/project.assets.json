@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\s30635\\Desktop\\apobd\\APBD\\APBD3\\APBD3\\APBD3.csproj",
+      "projectUniqueName": "C:\\Users\\s30635\\Desktop\\APBD\\APBD3\\APBD3\\APBD3.csproj",
       "projectName": "APBD3",
-      "projectPath": "C:\\Users\\s30635\\Desktop\\apobd\\APBD\\APBD3\\APBD3\\APBD3.csproj",
+      "projectPath": "C:\\Users\\s30635\\Desktop\\APBD\\APBD3\\APBD3\\APBD3.csproj",
       "packagesPath": "C:\\Users\\s30635\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\s30635\\Desktop\\apobd\\APBD\\APBD3\\APBD3\\obj\\",
+      "outputPath": "C:\\Users\\s30635\\Desktop\\APBD\\APBD3\\APBD3\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\s30635\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,11 +40,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -66,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

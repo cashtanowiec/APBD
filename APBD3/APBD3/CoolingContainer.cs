@@ -12,11 +12,28 @@ public class CoolingContainer : Container
 
     static CoolingContainer()
     {
-        string[] lines = File.ReadAllLines("temperatures.txt");
-        foreach (string line in lines)
+        try
         {
-            string[] keyValuePair = line.Split(" = ");
-            productTemperaturePair.Add(keyValuePair[0], Convert.ToDouble(keyValuePair[1]));
+            string[] lines = File.ReadAllLines("temperatures.txt");
+            foreach (string line in lines)
+            {
+                string[] keyValuePair = line.Split(" = ");
+                if (keyValuePair.Length != 2)
+                    throw new FormatException("Wrong file format!.");
+                productTemperaturePair.Add(keyValuePair[0], Convert.ToDouble(keyValuePair[1]));
+            }
+        }
+        catch (FileNotFoundException)
+        {
+            Console.WriteLine("temperatures.txt not found. Adding basic table...");
+        }
+        catch (FormatException ex)
+        {
+            Console.WriteLine($"Format error: {ex.Message}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Unexcepted error: {ex.Message}");
         }
     }
     
@@ -30,14 +47,14 @@ public class CoolingContainer : Container
         throw new InvalidOperationException("This method is not available for CoolingContainer. Please use the same method with an argument 'int temperature'.");
     }
 
-    public void fillContainer(string LoadName, int LoadWeight, int temperature)
+    public void fillContainer(string LoadName, int LoadWeight, int Temperature)
     {
         if (!productTemperaturePair.ContainsKey(LoadName))
             throw new ArgumentException("Such product doesn't exist in the table!");
-        if (temperature > productTemperaturePair[LoadName])
+        if (Temperature > productTemperaturePair[LoadName])
             throw new ArgumentException("The storage temperature is higher than allowed storage temperature for this product!");
 
-        this.temperature = temperature;
+        this.temperature = Temperature;
         base.fillContainer(LoadName, LoadWeight);
     }
     

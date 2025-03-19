@@ -39,7 +39,7 @@ public class Container
 
     public virtual void fillContainer(string LoadName, int LoadWeight)
     {
-        if (LoadWeight > maxLoadWeight) throw new OverfillException("Load weight cannot be greater than max load weight!");
+        if (LoadWeight + this.loadWeight > maxLoadWeight) throw new OverfillException("Load weight cannot be greater than max load weight!");
         if (this.loadName == null || this.loadName == LoadName)
         {
             this.loadName = LoadName;

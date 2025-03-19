@@ -20,8 +20,9 @@ public class GasContainer : Container, IHazardNotifier
     public void sendNotification(string message)
     {
         Console.BackgroundColor = ConsoleColor.Red;
-        Console.WriteLine(this.serialNumber + " Hazard notifier: " + message);
+        Console.Write(this.serialNumber + " Hazard notifier: " + message);
         Console.ResetColor();
+        Console.WriteLine();
     }
 
     public override void fillContainer(string loadName, int loadWeight)
@@ -45,7 +46,7 @@ public class GasContainer : Container, IHazardNotifier
         Random random = new Random();
         int rnd = random.Next(1, 51);
         if (rnd == 1) sendNotification("An accident happened during emptying of the container!");
-        else this.loadWeight = (int) 0.05 * loadWeight;
+        else this.loadWeight = 0.05 * loadWeight;
     }
 
     public override string ToString()

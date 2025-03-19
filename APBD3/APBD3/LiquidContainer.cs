@@ -16,8 +16,9 @@ public class LiquidContainer : Container, IHazardNotifier
     public void sendNotification(string message)
     {
         Console.BackgroundColor = ConsoleColor.Red;
-        Console.WriteLine(this.serialNumber + " Hazard notifier: " + message);
+        Console.Write(this.serialNumber + " Hazard notifier: " + message);
         Console.ResetColor();
+        Console.WriteLine();
     }
 
 
@@ -28,11 +29,11 @@ public class LiquidContainer : Container, IHazardNotifier
 
     public void fillContainer(string LoadName, int LoadWeight, bool isDangerous)
     {
-        if (isDangerous && LoadWeight > 0.5 * this.maxLoadWeight)
+        if (isDangerous && LoadWeight + this.loadWeight > 0.5 * this.maxLoadWeight)
         {
             this.sendNotification("Trying to load too much dangerous materials!");
         }
-        else if (!isDangerous && LoadWeight > 0.9 * this.maxLoadWeight)
+        else if (!isDangerous && LoadWeight + this.loadWeight > 0.9 * this.maxLoadWeight)
         {
             this.sendNotification("Trying to load too much non-dangerous materials!");
         }

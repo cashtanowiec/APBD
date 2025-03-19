@@ -26,6 +26,9 @@ public class CoolingContainer : Container
         catch (FileNotFoundException)
         {
             Console.WriteLine("temperatures.txt not found. Adding basic table...");
+            productTemperaturePair.Add("Bananas", 10);
+            productTemperaturePair.Add("Apples", 5);
+            productTemperaturePair.Add("Kiwi", 15);
         }
         catch (FormatException ex)
         {

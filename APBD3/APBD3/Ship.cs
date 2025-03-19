@@ -17,6 +17,8 @@ public class Ship
 
     public void addContainer(Container container)
     {
+        if (list.Count + 1 > maxContainerCount)
+            throw new ArgumentException("Container count exceeds the ship's max container count!");
         if (containersWeight + container.getTotalWeight() > maxShipWeight)
             throw new ArgumentException("The container is too heavy!");
         containersWeight += container.getTotalWeight();
@@ -25,6 +27,9 @@ public class Ship
 
     public void addContainerList(List<Container> containers)
     {
+        if (list.Count + containers.Count > maxContainerCount)
+            throw new ArgumentException("Container count exceeds the ship's max container count!");
+        
         double total = 0;
         foreach (Container container in containers)
         {
@@ -103,7 +108,7 @@ public class Ship
             shipInfo += "Containers on board:\n";
             foreach (var container in list)
             {
-                shipInfo += container.ToString() + "\n"; // Assuming Container has a ToString method
+                shipInfo += container.ToString() + "\n";
             }
         }
         else

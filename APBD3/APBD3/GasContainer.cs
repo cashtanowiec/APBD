@@ -12,9 +12,7 @@ public class GasContainer : Container, IHazardNotifier
     
     protected override void setSerialNumber()
     {
-        Console.BackgroundColor = ConsoleColor.Red;
         this.serialNumber = "KON-G-" + idCounter;
-        Console.ResetColor();
     }
 
     public void sendNotification(string message)
@@ -38,15 +36,7 @@ public class GasContainer : Container, IHazardNotifier
     
     public override void emptyContainer()
     {
-        // nie rozumiem kiedy mamy informowac o niebezpiecznym zdarzeniu w tym przypadku (informowanie o przekroczeniu maksymalnej ladownosci
-        // znajduje sie juz w klasie Container), dlatego zrobie to losowo:
-        // -raz na 50 przypadkow wydarzy sie jakies niebezpieczne zdarzenie i wywola sie metoda z interfejsu IHazardNotifier
-        // pls forgive me
-        
-        Random random = new Random();
-        int rnd = random.Next(1, 51);
-        if (rnd == 1) sendNotification("An accident happened during emptying of the container!");
-        else this.loadWeight = 0.05 * loadWeight;
+        this.loadWeight = 0.05 * loadWeight;
     }
 
     public override string ToString()

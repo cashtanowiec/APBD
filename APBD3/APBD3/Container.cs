@@ -14,6 +14,8 @@ public class Container
     public Container(int containerWeight, int maxLoadWeight, int height, int depth)
     {
         setSerialNumber();
+        this.loadName = null;
+        this.loadWeight = 0;
         this.containerWeight = containerWeight;
         this.height = height;
         this.depth = depth;

@@ -3,20 +3,36 @@
 public class GasContainer : Container, IHazardNotifier
 {
     private static int idCounter = 1;
-    private static readonly char symbol = 'G';
-    private int atmosphere = 0;
+    private int pressure = 0;
     
     public GasContainer(int containerWeight, int maxLoadWeight, int height, int depth) : base(containerWeight, maxLoadWeight, height, depth)
     {
-        this.serialNumber = "KON-" + symbol + "-" + idCounter;
         GasContainer.idCounter++;
+    }
+    
+    protected override void setSerialNumber()
+    {
+        Console.BackgroundColor = ConsoleColor.Red;
+        this.serialNumber = "KON-G-" + idCounter;
+        Console.ResetColor();
     }
 
     public void sendNotification(string message)
     {
         Console.BackgroundColor = ConsoleColor.Red;
         Console.WriteLine(this.serialNumber + " Hazard notifier: " + message);
-        Console.BackgroundColor = ConsoleColor.White;
+        Console.ResetColor();
+    }
+
+    public override void fillContainer(string loadName, int loadWeight)
+    {
+        throw new InvalidOperationException("This method is not available for GasContainer. Please use the same method with an argument 'int pressure'.");
+    }
+
+    public void fillContainer(String LoadName, int LoadWeight, int pressure)
+    {
+        this.pressure = pressure;
+        base.fillContainer(LoadName, LoadWeight);
     }
     
     public override void emptyContainer()
@@ -31,6 +47,9 @@ public class GasContainer : Container, IHazardNotifier
         if (rnd == 1) sendNotification("An accident happened during emptying of the container!");
         else this.loadWeight = (int) 0.05 * loadWeight;
     }
-    
-    
+
+    public override string ToString()
+    {
+        return base.ToString() + $", Pressure: {pressure}";
+    }
 }

@@ -3,9 +3,8 @@
 public class Container
 {
     private static int idCounter = 1;
-    private static readonly char symbol = 'A';
     protected string serialNumber;
-    protected string? LoadName;
+    protected string? loadName;
     protected double loadWeight;
     protected double maxLoadWeight;
     protected int height;
@@ -14,7 +13,7 @@ public class Container
 
     public Container(int containerWeight, int maxLoadWeight, int height, int depth)
     {
-        this.serialNumber = "KON-" + symbol + "-" + idCounter;
+        setSerialNumber();
         this.containerWeight = containerWeight;
         this.height = height;
         this.depth = depth;
@@ -22,28 +21,43 @@ public class Container
         Container.idCounter++;
     }
 
-
-    public virtual void fillContainer(String LoadName, int loadWeight)
+    protected virtual void setSerialNumber()
     {
-        if (loadWeight > maxLoadWeight) throw new OverflowException("Load weight cannot be greater than max load weight!");
-        else if (this.LoadName == null || this.LoadName == LoadName)
+        this.serialNumber = "KON-A-" + idCounter;
+    }
+
+    public string getSerialNumber()
+    {
+        return serialNumber;
+    }
+
+    public double getTotalWeight()
+    {
+        return loadWeight + containerWeight;
+    }
+
+
+    public virtual void fillContainer(string LoadName, int LoadWeight)
+    {
+        if (LoadWeight > maxLoadWeight) throw new OverfillException("Load weight cannot be greater than max load weight!");
+        if (this.loadName == null || this.loadName == LoadName)
         {
-            this.LoadName = LoadName;
-            this.loadWeight += loadWeight;
+            this.loadName = LoadName;
+            this.loadWeight += LoadWeight;
         }
-        else if (LoadName != this.LoadName) throw new ArgumentException("Only one load can be stored at a time!");
+        else if (LoadName != this.loadName) throw new ArgumentException("Only one load can be stored at a time!");
     }
     
     public virtual void emptyContainer()
     {
-        this.LoadName = null;
+        this.loadName = null;
         this.loadWeight = 0;
     }
 
     public override string ToString()
     {
         return $"Serial Number: {serialNumber}, " +
-               $"Load Name: {LoadName ?? "None"}, " +
+               $"Load Name: {loadName ?? "None"}, " +
                $"Load Weight: {loadWeight}, " +
                $"Container Weight: {containerWeight}, " +
                $"height: {height}, " +
